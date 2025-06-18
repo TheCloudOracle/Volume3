@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volume 3 – Masia & Co</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fdfdfd;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #3A6D9F, #1DB954);
+      color: white;
+      padding: 80px 20px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+
+    header .subtitle {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #f0f0f0;
+    }
+
+    .hero-img {
+      width: 200px;
+      position: absolute;
+      top: 20px;
+      right: -50px;
+      opacity: 0.2;
+      transform: rotate(15deg);
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .listen-btn {
+      background-color: #1DB954;
+      color: white;
+      padding: 14px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 40px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .listen-btn:hover {
+      background-color: #159d46;
+    }
+
+    .images {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .images img {
+      width: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.05);
+    }
+
+    .spotify-embed {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .more-links {
+      background-color: #eee;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .more-links h2 {
+      margin-bottom: 20px;
+    }
+
+    .more-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #1DB954;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .more-links a:hover {
+      background-color: #168f3f;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .images img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Volume 3</h1>
+    <div class="subtitle">by Masia & co.</div>
+    <img class="hero-img" src="https://cdn.branch.io/branch-assets/1445613290388-og_image.png" alt="Background Overlay">
+  </header>
+
+  <div class="content">
+    <p>"Volume 3" is a curated playlist featuring a diverse selection of tracks from different individuals chosen by Masia. This playlist showcases a range of styles and genres, blending energetic beats and soulful melodies to create a dynamic listening experience. With Volume 3, Masia brings together a unique group of music enthusiasts to share their perspectives and creativity through music.</p>
+
+    <a class="listen-btn" href="https://open.spotify.com/playlist/3QoQxakLEDQFgDy7ye4Yph?si=dd25d45bc256418d" target="_blank">
+      LISTEN NOW ON SPOTIFY
+    </a>
+
+    <div class="images">
+      <img src="https://i.pinimg.com/originals/a1/5b/7c/a15b7c9c794fd90a9db2f8e0b7b9c329.jpg" alt="Mood 1">
+      <img src="https://bettermanchester.com/wp-content/uploads/2023/01/Teenagers-Lifestyle-Casual-Culture-Youth-Style-Concept_feautred.png" alt="Youth Culture">
+      <img src="https://th.bing.com/th/id/OIP.eiCmkruLdvKmTlJYWe5mdwHaHa?rs=1&pid=ImgDetMain" alt="Vibe 2">
+    </div>
+
+    <div class="spotify-embed">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3QoQxakLEDQFgDy7ye4Yph?utm_source=generator" width="80%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="more-links">
+    <h2>Discover More Like Volume 3</h2>
+    <a href="https://open.spotify.com/playlist/37i9dQZF1DXdyjMX5o2vCq?si=6d741b0ffaed4e6f" target="_blank">This is Frank Ocean</a>
+    <a href="https://open.spotify.com/album/4JCybsNZUXWrK2Jpyn12Ni?si=nKEYO_nERnOnXF4wloGg4w" target="_blank">Childish Gambino</a>
+  </div>
+
+</body>
+</html>
