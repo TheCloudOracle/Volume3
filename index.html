@@ -7,136 +7,168 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --primary: #1DB954;
+      --accent: #3A6D9F;
+      --bg: #0f0f0f;
+      --fg: #f0f0f0;
+      --glass: rgba(255, 255, 255, 0.05);
     }
 
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
       font-family: 'Inter', sans-serif;
-      background: #fdfdfd;
-      color: #111;
-      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--fg);
     }
 
     header {
-      background: linear-gradient(to right, #3A6D9F, #1DB954);
-      color: white;
-      padding: 80px 20px 40px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
       text-align: center;
+      padding: 120px 20px 60px;
       position: relative;
       overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     }
 
     header h1 {
-      font-size: 4rem;
+      font-size: 5rem;
       font-weight: 600;
+      color: #fff;
+      z-index: 2;
+      position: relative;
     }
 
     header .subtitle {
       font-family: 'Pacifico', cursive;
-      font-size: 1.5rem;
-      margin-top: 10px;
-      color: #f0f0f0;
+      font-size: 1.8rem;
+      color: #f3f3f3;
+      z-index: 2;
+      position: relative;
     }
 
-    .hero-img {
-      width: 200px;
+    .hero-glow {
       position: absolute;
-      top: 20px;
-      right: -50px;
-      opacity: 0.2;
-      transform: rotate(15deg);
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #1DB95488 0%, transparent 70%);
+      filter: blur(100px);
+      z-index: 1;
     }
 
     .content {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
 
     .content p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 40px;
       font-weight: 300;
+      line-height: 1.8;
+      text-align: center;
     }
 
     .listen-btn {
-      background-color: #1DB954;
-      color: white;
-      padding: 14px 30px;
-      font-size: 1rem;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 14px 40px;
+      font-size: 1.1rem;
       font-weight: bold;
       border: none;
-      border-radius: 40px;
-      transition: background 0.3s ease;
-      cursor: pointer;
+      border-radius: 50px;
       text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .listen-btn:hover {
-      background-color: #159d46;
+      transform: scale(1.05);
+      background-color: #13a94b;
     }
 
     .images {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
       margin: 60px 0;
     }
 
     .images img {
-      width: 180px;
-      border-radius: 10px;
+      width: 100%;
+      border-radius: 16px;
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      filter: brightness(85%) contrast(110%);
+      transition: transform 0.3s ease, filter 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
     .images img:hover {
       transform: scale(1.05);
+      filter: brightness(100%) contrast(115%);
     }
 
     .spotify-embed {
       display: flex;
       justify-content: center;
-      margin: 60px 0;
+      margin: 80px 0;
     }
 
     .more-links {
-      background-color: #eee;
-      padding: 40px 20px;
+      background: var(--glass);
+      backdrop-filter: blur(16px);
+      padding: 60px 20px;
+      border-radius: 20px;
       text-align: center;
+      margin: 60px auto;
+      width: 90%;
     }
 
     .more-links h2 {
-      margin-bottom: 20px;
+      font-size: 1.6rem;
+      margin-bottom: 30px;
     }
 
     .more-links a {
-      display: inline-block;
       margin: 10px;
-      padding: 12px 20px;
-      background-color: #1DB954;
+      padding: 12px 24px;
+      background-color: var(--primary);
       color: white;
       text-decoration: none;
       border-radius: 30px;
       font-weight: 500;
       transition: background 0.3s ease;
+      display: inline-block;
     }
 
     .more-links a:hover {
-      background-color: #168f3f;
+      background-color: #149e46;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      background-color: #000;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
       }
-      .images img {
-        width: 100%;
+      .images {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -145,26 +177,31 @@
 <body>
 
   <header>
+    <div class="hero-glow"></div>
     <h1>Volume 3</h1>
-    <div class="subtitle">by Masia & co.</div>
-    <img class="hero-img" src="https://cdn.branch.io/branch-assets/1445613290388-og_image.png" alt="Background Overlay">
+    <div class="subtitle">by Masia & Co.</div>
   </header>
 
   <div class="content">
-    <p>"Volume 3" is a curated playlist featuring a diverse selection of tracks from different individuals chosen by Masia. This playlist showcases a range of styles and genres, blending energetic beats and soulful melodies to create a dynamic listening experience. With Volume 3, Masia brings together a unique group of music enthusiasts to share their perspectives and creativity through music.</p>
+    <p>
+      “Volume 3” is more than a playlist — it’s a **collective vibe**, curated by Masia and collaborators.
+      Expect deep cuts, soulful blends, and genre jumps that feel like you're flipping channels through creative minds.
+    </p>
 
-    <a class="listen-btn" href="https://open.spotify.com/playlist/3QoQxakLEDQFgDy7ye4Yph?si=dd25d45bc256418d" target="_blank">
-      LISTEN NOW ON SPOTIFY
-    </a>
+    <div style="text-align: center;">
+      <a class="listen-btn" href="https://open.spotify.com/playlist/3QoQxakLEDQFgDy7ye4Yph?si=dd25d45bc256418d" target="_blank">
+        LISTEN NOW
+      </a>
+    </div>
 
     <div class="images">
-      <img src="https://i.pinimg.com/originals/a1/5b/7c/a15b7c9c794fd90a9db2f8e0b7b9c329.jpg" alt="Mood 1">
-      <img src="https://bettermanchester.com/wp-content/uploads/2023/01/Teenagers-Lifestyle-Casual-Culture-Youth-Style-Concept_feautred.png" alt="Youth Culture">
-      <img src="https://th.bing.com/th/id/OIP.eiCmkruLdvKmTlJYWe5mdwHaHa?rs=1&pid=ImgDetMain" alt="Vibe 2">
+      <img src="https://i.pinimg.com/originals/a1/5b/7c/a15b7c9c794fd90a9db2f8e0b7b9c329.jpg" alt="Vibe 1">
+      <img src="https://bettermanchester.com/wp-content/uploads/2023/01/Teenagers-Lifestyle-Casual-Culture-Youth-Style-Concept_feautred.png" alt="Youth">
+      <img src="https://th.bing.com/th/id/OIP.eiCmkruLdvKmTlJYWe5mdwHaHa?rs=1&pid=ImgDetMain" alt="Mood 2">
     </div>
 
     <div class="spotify-embed">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3QoQxakLEDQFgDy7ye4Yph?utm_source=generator" width="80%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3QoQxakLEDQFgDy7ye4Yph?utm_source=generator" width="80%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 
@@ -173,6 +210,10 @@
     <a href="https://open.spotify.com/playlist/37i9dQZF1DXdyjMX5o2vCq?si=6d741b0ffaed4e6f" target="_blank">This is Frank Ocean</a>
     <a href="https://open.spotify.com/album/4JCybsNZUXWrK2Jpyn12Ni?si=nKEYO_nERnOnXF4wloGg4w" target="_blank">Childish Gambino</a>
   </div>
+
+  <footer>
+    <p>© 2025 Masia & Co. | Crafted for the culture</p>
+  </footer>
 
 </body>
 </html>
